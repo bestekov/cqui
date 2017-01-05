@@ -1001,45 +1001,6 @@ end
 function DefaultKeyUpHandler( uiKey:number )
   local keyPanChanged :boolean = false;
 
-  if( uiKey == Keys.W ) then
-        m_isUPpressed = false;
-        keyPanChanged = true;
-      end
-      if( uiKey == Keys.D ) then
-        m_isRIGHTpressed = false;
-        keyPanChanged = true;
-      end
-      if( uiKey == Keys.S ) then
-        m_isDOWNpressed = false;
-        keyPanChanged = true;
-      end
-      if( uiKey == Keys.A ) then
-        m_isLEFTpressed = false;
-        keyPanChanged = true;
-      end
-      if( uiKey == Keys.E ) then
-        if(CQUI_cityview) then
-          LuaEvents.CQUI_GoNextCity();
-        else
-          UI.SelectNextReadyUnit();
-        end
-      end
-      if( uiKey == Keys.Q ) then
-        if(CQUI_cityview) then
-          LuaEvents.CQUI_GoPrevCity();
-        else
-          UI.SelectPrevReadyUnit();
-        end
-      end
-      if( uiKey == Keys.VK_SHIFT and ContextPtr:LookUpControl("/InGame/TechTree"):IsHidden() and ContextPtr:LookUpControl("/InGame/CivicsTree"):IsHidden()) then
-        if(CQUI_cityview) then
-          UI.SetInterfaceMode(InterfaceModeTypes.SELECTION);
-          UI.SelectNextReadyUnit();
-        else
-          LuaEvents.CQUI_GoNextCity();
-        end
-  
-  
   --CQUI Keybinds
   if CQUI_hotkeyMode ~= 0 then
     if CQUI_hotkeyMode == 2 then
